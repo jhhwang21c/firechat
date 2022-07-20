@@ -4,21 +4,14 @@ import './App.css';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-
+import { FirebaseConfig } from './firebase_config';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 import { Box, Flex, HStack, VStack } from '@chakra-ui/react';
 
 
-firebase.initializeApp({
-  apiKey: "AIzaSyBHzC4ibBiEXDl7K9edpe4zCaxTSUDLCPM",
-  authDomain: "firechat-ae403.firebaseapp.com",
-  projectId: "firechat-ae403",
-  storageBucket: "firechat-ae403.appspot.com",
-  messagingSenderId: "434280640521",
-  appId: "1:434280640521:web:c22aa625992a643b93c8d8"
-})
+firebase.initializeApp(FirebaseConfig);
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
